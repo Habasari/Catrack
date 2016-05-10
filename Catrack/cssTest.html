@@ -44,10 +44,7 @@ and open the template in the editor.
           </tr>
         <table>
 
-        <div class = left>
-          <h1>Content</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit enim et feugiat ullamcorper. Integer vel nisl at erat vestibulum tincidunt nec nec massa. Sed hendrerit malesuada sodales. Donec interdum dolor quis iaculis consequat. Curabitur vestibulum metus a arcu lobortis rutrum in sit amet justo. Mauris ac ultricies elit. Nunc porttitor velit sed dui molestie, ut tincidunt augue venenatis.</p>
-        </div>
+        <div class = left id="map"></div>
 
         <div class = right>
           <h1>Content</h1>
@@ -55,6 +52,27 @@ and open the template in the editor.
         </div>
 
       </div>
+      
+      <script>
+
+      function initMap() {
+        var myLatLng = {lat: 60.2218466, lng: 24.8047101};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClrOhZG24nKhAzRKpfWH1BJ0PKgozI6H4&callback=initMap">
+    </script>
 
     </body>
 </html>
