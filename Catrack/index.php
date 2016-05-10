@@ -11,7 +11,17 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+        require_once('config.php');
+        require_once('dbopen.php');
+        
+        $query = "SELECT * FROM koord";
+        $results = mysql_query($query)
+                or die("Kyselyssä tapahtui virhe: " . mysql_errno());
+        
+        while($row = mysql_fetch_array($results)) {
+            echo "<br>";
+            echo "$row[0]";
+        }
         ?>
     </body>
 </html>
