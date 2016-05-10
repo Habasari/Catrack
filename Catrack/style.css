@@ -9,8 +9,8 @@ h1 {
 }
 
 p {
-  color: #fff;
-  font-family: sans-serif;
+    color: #fff;
+    font-family: sans-serif;
 }
 
 div.logo {
@@ -30,15 +30,15 @@ div.logo {
 }
 
 table#tNav {
-  text-align: center;
-  width: 740px;
-  margin: 5px;
+    text-align: center;
+    width: 740px;
+    margin: 5px;
 }
 
 a#nav {
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: bold;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 div.content {
