@@ -1,17 +1,52 @@
 body {
-    background-color: #d0e4fe;
+    background-color: #f6f6f6;
 }
 
 h1 {
     color: orange;
     text-align: center;
+    font-family: arial;
 }
 
 p {
-    font-family: "Times New Roman";
-    font-size: 20px;
+  color: #f6f6f6;
+  font-family: arial;
 }
 
 div.logo {
-    background-image: "logo.png";
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: local;
+    background-size: contain;
+    width: 600px;
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border-width: 1px;
+    border-style: solid;*/
+}
+
+div.content {
+    float: none;
+    background-color: #D9853B;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.content>div.float {
+    background-color: #2B2B2B;
+    display: inline-block;
+    width: 330px;
+    height: auto;
+    margin-left: 15px;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #f6f6f6;
 }
