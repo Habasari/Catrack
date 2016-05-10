@@ -6,10 +6,10 @@
  * and open the template in the editor.
  */
 
-$dbuser = '';
-$dbpass = '';
+$dbuser = 'anatolil';
+$dbpass = 'MySQLpAssUtuSSu13';
 $dbhost = 'mysql.metropolia.fi';
-$dbname = '';
+$dbname = 'anatolil';
 $dbtype = 'mysql';
 
 ?>
