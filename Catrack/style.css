@@ -1,16 +1,16 @@
 body {
-    background-color: #f6f6f6;
+    background-color: #ECCCDE;
 }
 
 h1 {
-    color: orange;
+    color: #000;
     text-align: center;
-    font-family: arial;
+    font-family: sans-serif;
 }
 
 p {
-  color: #f6f6f6;
-  font-family: arial;
+  color: #fff;
+  font-family: sans-serif;
 }
 
 div.logo {
@@ -29,9 +29,21 @@ div.logo {
     border-style: solid;*/
 }
 
+table#tNav {
+  text-align: center;
+  width: 740px;
+  margin: 5px;
+}
+
+a#nav {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
 div.content {
     float: none;
-    background-color: #D9853B;
+    background-color: #ECA680;
     padding-top: 15px;
     padding-bottom: 15px;
     width: 750px;
@@ -39,13 +51,27 @@ div.content {
     margin-right: auto;
 }
 
-div.content>div.float {
-    background-color: #2B2B2B;
+div.content>div.left {
+    vertical-align: top;
+    background-color: #A6457C;
     display: inline-block;
-    width: 330px;
-    height: auto;
+    width: 480px;
+    height: 480px;
     margin-left: 15px;
-    margin-right: auto;
+    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #f6f6f6;
+}
+
+div.content>div.right {
+    vertical-align: top;
+    background-color: #A6457C;
+    display: inline-block;
+    width: 180px;
+    height: 480px;
+    margin-left: 15px;
+    margin-right: 0px;
     padding-left: 10px;
     padding-right: 10px;
     color: #f6f6f6;
