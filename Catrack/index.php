@@ -11,20 +11,22 @@ and open the template in the editor.
         <title>C(at)Trak</title>
     </head>
     <body>
-        <div style = logo>
+        <div id="logo">
         </div>
         <?php
         require_once('config.php');
         require_once('dbopen.php');
 
-        $query = "SELECT * FROM koord";
+        $query = "SELECT * FROM tiedot";
         $results = mysql_query($query)
                 or die("Kyselyssä tapahtui virhe: " . mysql_errno());
 
         while($row = mysql_fetch_array($results)) {
             echo "<br>";
-            echo "$row[0]";
+            echo "$row[4]";
         }
+        
+        require_once('dbclose.php');
         ?>
     </body>
 </html>
