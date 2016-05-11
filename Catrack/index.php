@@ -27,7 +27,7 @@ and open the template in the editor.
                         <a onclick="sijainnit()" href = "#" id = nav>Sijainnit</a>
                     </td>
                     <td>
-                        <a href = "#" id = nav>Buten</a>
+                        <a onclick="reitti()" href = "#" id = nav>Reitti</a>
                     </td>
                     <td>
                         <a href = "#" id = nav>Buten</a>
@@ -86,6 +86,7 @@ and open the template in the editor.
         </script>
         <script src="reviiri.php"></script>
         <script src="sijainnit.php"></script>
+        <script src="reitti.php"></script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClrOhZG24nKhAzRKpfWH1BJ0PKgozI6H4&callback=initMap">
         </script>
