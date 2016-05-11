@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>C(at)Trak</title>
     </head>
@@ -58,12 +59,12 @@ and open the template in the editor.
                 <?php
                 require_once('config.php');
                 require_once('dbopen.php');
-                
+
                 $query = "SELECT cordlang, cordlong FROM tiedot WHERE elainid = 2";
                 $results = mysql_query($query)
                         or die("Kyselyssä tapahtui virhe: " . mysql_errno());
                 $i = 0;
-                
+
                 while ($row = mysql_fetch_array($results)) {
                     echo "var myLatLng" . $i . " = {lat: " . $row[0] . ", lng: " . $row[1] . "};\n";
                     $i++;
@@ -72,10 +73,10 @@ and open the template in the editor.
                 //require_once('dbclose.php');
                 ?>
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 4,
+                    zoom: 14,
                     center: myLatLng0
                 });
-                    
+
                 <?php
                 //while ($i >= 0) {
                     echo "var marker" . $i . " = new google.maps.Marker({ \nposition: myLatLng" . $i . ", \nmap: map, \ntitle: '" . $i . "'}); \n";
@@ -85,25 +86,25 @@ and open the template in the editor.
 
                 //metaa
                 document.getElementById('metaotsikko').innerHTML = "Sijainti";
-                
+
                 document.getElementById('metadata').innerHTML = '<?php
-                
+
                 require_once('config.php');
                 require_once('dbopen.php');
-                
+
                 $query = "SELECT cordlang, cordlong, heartbeat, steps FROM tiedot  WHERE elainid = 2 ORDER BY id DESC LIMIT 1;";
                 $results = mysql_query($query)
                         or die("Kyselyssä tapahtui virhe: " . mysql_errno());
-                
+
                 $i = 0;
-                
+
                 $row = mysql_fetch_array($results);
-                
+
                 echo $row[0] . " lant<br>";
                 echo $row[1] . " long<br>";
                 echo $row[2] . " bpm<br>";
                 echo $row[3] . " akeleet<br>";
-                
+
                 ?>';
             }
         </script>
