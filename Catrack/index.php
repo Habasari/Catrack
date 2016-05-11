@@ -24,7 +24,7 @@ and open the template in the editor.
                         <a onclick="reviiri()" href = "#" id = nav>Reviiri</a>
                     </td>
                     <td>
-                        <a href = "#" id = nav>Buten</a>
+                        <a onclick="reviiri2()" href = "#" id = nav>Buten</a>
                     </td>
                     <td>
                         <a href = "#" id = nav>Buten</a>
@@ -84,7 +84,7 @@ and open the template in the editor.
                 ?>
             }
         </script>
-        <script src="reviiri.js"></script>
+        <script src="reviiri.php"></script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClrOhZG24nKhAzRKpfWH1BJ0PKgozI6H4&callback=initMap">
         </script>
