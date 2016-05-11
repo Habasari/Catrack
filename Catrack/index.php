@@ -31,16 +31,16 @@ and open the template in the editor.
                         <a onclick="reitti()" href = "#" id = nav>Reitti</a>
                     </td>
                     <td>
-                        <a href = "#" id = nav>Buten</a>
+                        <a href = "#" id = nav>Aktiivisuus data</a>
                     </td>
                     <td>
-                        <a href = "#" id = nav>Buten</a>
+                        <a href = "#" id = nav>Omat kissat</a>
                     </td>
                     <td>
-                        <a href = "#" id = nav>Buten</a>
+                        <a href = "#" id = nav>Ranking</a>
                     </td>
                     <td>
-                        <a href = "#" id = nav>Buten</a>
+                        <a href = "#" id = nav>Muut Kissat</a>
                     </td>
                 </tr>
             </table>
