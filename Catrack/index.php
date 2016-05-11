@@ -18,13 +18,13 @@ and open the template in the editor.
             <table id = tNav>
                 <tr>
                     <td>
-                        <a href = "#" id = nav>Buten</a>
+                        <a href = "index.php" id = nav>Sijainti</a>
                     </td>
                     <td>
                         <a onclick="reviiri()" href = "#" id = nav>Reviiri</a>
                     </td>
                     <td>
-                        <a onclick="reviiri2()" href = "#" id = nav>Buten</a>
+                        <a onclick="sijainnit()" href = "#" id = nav>Sijainnit</a>
                     </td>
                     <td>
                         <a href = "#" id = nav>Buten</a>
@@ -77,14 +77,15 @@ and open the template in the editor.
                 });
                     
                 <?php
-                while ($i >= 0) {
+                //while ($i >= 0) {
                     echo "var marker" . $i . " = new google.maps.Marker({ \nposition: myLatLng" . $i . ", \nmap: map, \ntitle: '" . $i . "'}); \n";
-                    $i--;
-                }
+                //    $i--;
+                //}
                 ?>
             }
         </script>
         <script src="reviiri.php"></script>
+        <script src="sijainnit.php"></script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClrOhZG24nKhAzRKpfWH1BJ0PKgozI6H4&callback=initMap">
         </script>
