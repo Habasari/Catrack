@@ -113,4 +113,8 @@ function reviiri() {
     
     reviiriPoly_w.setMap(reviirimap);
     reviiriPoly_e.setMap(reviirimap);
+    
+    //metaa
+    document.getElementById('metaotsikko').innerHTML = "Reviiri";
+    document.getElementById('metadata').innerHTML = " ";
 }

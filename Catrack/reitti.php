@@ -67,4 +67,8 @@ function reitti() {
         strokeWeight: 2
     });
     flightPath.setMap(map);
+    
+    //metaa
+    document.getElementById('metaotsikko').innerHTML = "Reitti";
+    document.getElementById('metadata').innerHTML = " ";
 }

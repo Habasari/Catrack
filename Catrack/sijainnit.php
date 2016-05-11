@@ -35,4 +35,8 @@ function sijainnit() {
         $i--;
     }
     ?>
+    
+     //metaa
+    document.getElementById('metaotsikko').innerHTML = "Käydyt paikat";
+    document.getElementById('metadata').innerHTML = " ";
 }
