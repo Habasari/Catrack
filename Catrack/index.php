@@ -47,8 +47,8 @@ and open the template in the editor.
             <div class = left id="map"></div>
 
             <div class = right>
-                <h1>Content</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit enim et feugiat ullamcorper. Integer vel nisl at erat vestibulum tincidunt nec nec massa. Sed hendrerit malesuada sodales. Donec interdum dolor quis iaculis consequat. Curabitur vestibulum metus a arcu lobortis rutrum in sit amet justo. Mauris ac ultricies elit. Nunc porttitor velit sed dui molestie, ut tincidunt augue venenatis.</p>
+                <h1 id="metaotsikko"></h1>
+                <p id="metadata"></p>
             </div>
 
         </div>
@@ -69,7 +69,7 @@ and open the template in the editor.
                     $i++;
                 }
                 $i--;
-                require_once('dbclose.php');
+                //require_once('dbclose.php');
                 ?>
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 4,
@@ -82,6 +82,29 @@ and open the template in the editor.
                 //    $i--;
                 //}
                 ?>
+
+                //metaa
+                document.getElementById('metaotsikko').innerHTML = "Sijainti";
+                
+                document.getElementById('metadata').innerHTML = '<?php
+                
+                require_once('config.php');
+                require_once('dbopen.php');
+                
+                $query = "SELECT cordlang, cordlong, heartbeat, steps FROM tiedot  WHERE elainid = 2 ORDER BY id DESC LIMIT 1;";
+                $results = mysql_query($query)
+                        or die("Kyselyssä tapahtui virhe: " . mysql_errno());
+                
+                $i = 0;
+                
+                $row = mysql_fetch_array($results);
+                
+                echo $row[0] . " lant<br>";
+                echo $row[1] . " long<br>";
+                echo $row[2] . " bpm<br>";
+                echo $row[3] . " akeleet<br>";
+                
+                ?>';
             }
         </script>
         <script src="reviiri.php"></script>
