@@ -1,42 +1,39 @@
-<?php
-?>
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 function sijainnit() {
-    <?php
-    require_once('config.php');
-    require_once('dbopen.php');
-    
-    $query = "SELECT cordlang, cordlong FROM tiedot WHERE elainid = 2";
-    $results = mysql_query($query)
-            or die("Kyselyssä tapahtui virhe: " . mysql_errno());
-    $i = 0;
-    
-    while ($row = mysql_fetch_array($results)) {
-        echo "var myLatLng" . $i . " = {lat: " . $row[0] . ", lng: " . $row[1] . "};\n";
-        $i++;
-    }
-    $i--;
-    require_once('dbclose.php');
-    ?>
+  <?php
+  require_once('config.php');
+  require_once('dbopen.php');
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng0
-    });
-        
-    <?php
-    while ($i >= 0) {
-        echo "var marker" . $i . " = new google.maps.Marker({ \nposition: myLatLng" . $i . ", \nmap: map, \ntitle: '" . $i . "'}); \n";
-        $i--;
-    }
-    ?>
-    
-     //metaa
-    document.getElementById('metaotsikko').innerHTML = "Käydyt paikat";
-    document.getElementById('metadata').innerHTML = " ";
+  $query = "SELECT cordlang, cordlong, elainid, id FROM tiedot";
+  $results = mysql_query($query)
+          or die("Kyselyssä tapahtui virhe: " . mysql_errno());
+
+  echo "var map;\n";
+  while ($row = mysql_fetch_array($results)) {
+      echo "var myLatLng" . $row[3] . " = {lat: " . $row[0] . ", lng: " . $row[1] . "};\n";
+      echo "if (map == null) {
+          map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng".$row[3]."
+      });}\n";
+      echo "var marker" . $row[3] . " = new google.maps.Marker({ \nposition: myLatLng" . $row[3] . ", \nmap: map, \ntitle: '" . $row[3] . "', icon: 'buten" . $row[2] .".png'}); \n";
+      echo "google.maps.event.addListener(marker" . $row[3] . ", 'click', function(event){
+        setMetaData(". $row[3] .");
+      });\n";
+  }
+  //require_once('dbclose.php');
+  ?>
+}
+
+function setMetaData(id) {
+
+  var rowID = id;
+  var php = "";
+  $.get("fetchData.php?id=" + rowID, function(data){
+    setData(data, rowID)
+  });
+}
+
+function setData(html, rowID){
+  document.getElementById('metaotsikko').innerHTML = "Sijaintitieto nr." + rowID;
+  document.getElementById('metadata').innerHTML = html;
 }
